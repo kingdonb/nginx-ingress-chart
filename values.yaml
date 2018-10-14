@@ -24,7 +24,7 @@ controller:
 
   ## Use host ports 80 and 443
   daemonset:
-    useHostPort: false
+    useHostPort: true
 
     hostPorts:
       http: 80
@@ -79,7 +79,7 @@ controller:
 
   ## DaemonSet or Deployment
   ##
-  kind: Deployment
+  kind: DaemonSet
 
   # The update strategy to apply to the Deployment or DaemonSet
   ##
@@ -182,7 +182,7 @@ controller:
       http: http
       https: https
 
-    type: LoadBalancer
+    type: ClusterIP
 
     # type: NodePort
     # nodePorts:
